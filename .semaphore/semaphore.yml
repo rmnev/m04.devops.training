@@ -26,6 +26,7 @@ blocks:
             - echo "$DOCKER_TOKEN" | docker login -u "$DOCKER_USERNAME" --password-stdin
             - echo $SEMAPHORE_WORKFLOW_ID
             - 'docker tag myapp rmnev/myapp:$SEMAPHORE_WORKFLOW_ID'
+            - 'docker push rmnev/myapp:$SEMAPHORE_WORKFLOW_ID'
       secrets:
         - name: DOCKER_PASSWORD_Mnev
         - name: DOCKER_TOKEN_Mnev
