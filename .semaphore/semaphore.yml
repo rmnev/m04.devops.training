@@ -22,6 +22,6 @@ blocks:
             - echo $DOCKER_USERNAME
             - echo "$DOCKER_TOKEN" | docker login -u "$DOCKER_USERNAME" --password-stdin
       secrets:
-        - name: DOCKER_PASSWORD
-        - name: DOCKER_TOKEN
-        - name: DOCKER_USERNAME
+        - name: DOCKER_PASSWORD_Mnev
+        - name: DOCKER_TOKEN_Mnev
+        - name: DOCKER_USERNAME_Mnev
