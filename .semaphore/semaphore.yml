@@ -21,7 +21,7 @@ blocks:
           commands:
             - checkout
             - cd 7-pipeline
-            - docker compose up --build -d
+            - docker build -t myapp .
             - echo $DOCKER_USERNAME
             - echo "$DOCKER_TOKEN" | docker login -u "$DOCKER_USERNAME" --password-stdin
             - echo $SEMAPHORE_WORKFLOW_ID
