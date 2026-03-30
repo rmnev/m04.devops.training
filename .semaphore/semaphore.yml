@@ -19,8 +19,13 @@ blocks:
       jobs:
         - name: Build
           commands:
+            - checkout
+            - cd 7-pipeline
+            - docker compose up --build -d
             - echo $DOCKER_USERNAME
             - echo "$DOCKER_TOKEN" | docker login -u "$DOCKER_USERNAME" --password-stdin
+            - echo $SEMAPHORE_WORKFLOW_ID
+            - 'docker tag myapp rmnev/myapp:$SEMAPHORE_WORKFLOW_ID'
       secrets:
         - name: DOCKER_PASSWORD_Mnev
         - name: DOCKER_TOKEN_Mnev
